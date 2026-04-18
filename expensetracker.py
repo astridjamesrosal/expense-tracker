@@ -33,12 +33,21 @@ def add_expense():
     next_id += 1
     print("Expense added successfully!")
 
+def view_expenses():
+    if not expenses:
+        print("No expenses to show.")
+    else:
+        for expense in expenses:
+            print(f"ID: {expense['id']}, Amount: ${expense['amount']:.2f}, Category: {expense['category']}, Description: {expense['description']}")
+
 while True:
     show_menu()
     choice = input("Choose: ")
 
     if choice == "1":
         add_expense()
+    elif choice == "2":
+        view_expenses()
     elif choice == "6":
         print("Goodbye!")
         break
