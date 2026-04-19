@@ -8,6 +8,7 @@ A command-line expense tracker built in Python.
 - Removing expenses by their designated ID
 - Viewing the total amount of the expenses
 - Viewing the expenses by their designated Category
+- Saving the expenses in a JSON file
 - Unique ID assigned to each expense
 - Input validation for amounts
 
