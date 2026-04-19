@@ -1,18 +1,18 @@
-import json
+import json                                     #Imports Python Built-In JSON module to handle, read, and write JSON files.
 
-def load_expenses():
-    try:
-        with open("expenses.json", "r") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return []
+def load_expenses():                            #Loads expenses from a JSON file into the program.
+    try:                                        #Error Handling, if file doesn't exist, return an empty list.
+        with open("expenses.json", "r") as f:   #Opens the expenses.json file and read("r") its content.
+            return json.load(f)                 #After reading the whole JSON file, bring it to the program as a list.
+    except FileNotFoundError:                   #In cases the file doesn't exist, it will catch the error 
+        return []                               #And return an empty list on the program.
     
-def save_expenses(): 
-    with open("expenses.json", "w") as f:
-        json.dump(expenses, f)
+def save_expenses():                            #Saves the current expenses list in the program to a JSON file.
+    with open("expenses.json", "w") as f:       #Opens the expenses.json file and write("w") the added expenses list to it. 
+        json.dump(expenses, f)                  #Takes the expenses list from the program and writes it to the file in JSON.
 
-expenses = load_expenses()
-next_id = 1
+expenses = load_expenses()                      #Instead of [], we will load previously saved expenses from the JSON file.
+next_id = 1                                     #Initialize next_id to 1, which will be used to assign unique IDs to expenses. 
 
 def show_menu():
 
