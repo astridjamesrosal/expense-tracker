@@ -40,6 +40,29 @@ def view_expenses():
         for expense in expenses:
             print(f"ID: {expense['id']}, Amount: ${expense['amount']:.2f}, Category: {expense['category']}, Description: {expense['description']}")
 
+def remove_expense():
+    if not expenses:
+        print("No expenses to show.")
+        return
+    
+    view_expenses()
+    
+    while True:
+        choice = input("Which expense would you like to remove? (Enter ID): ")
+        if choice.isdigit():
+            break
+        print("Invalid input, please enter a valid ID.")
+    
+    expense_id = int(choice)
+    
+    for expense in expenses:
+        if expense["id"] == expense_id:
+            expenses.remove(expense)
+            print("Expense removed successfully!")
+            return
+    
+    print("Expense not found, please enter a valid existing ID")
+
 while True:
     show_menu()
     choice = input("Choose: ")
@@ -48,6 +71,8 @@ while True:
         add_expense()
     elif choice == "2":
         view_expenses()
+    elif choice == "3":
+        remove_expense()
     elif choice == "6":
         print("Goodbye!")
         break
