@@ -63,6 +63,15 @@ def remove_expense():
     
     print("Expense not found, please enter a valid existing ID")
 
+def view_total_expenses():
+    if not expenses:
+        print("No expenses to show.")
+        return
+    total = 0
+    for expense in expenses:
+        total += expense["amount"]
+    print(f"Total Expenses: ${(total):.2f}")
+
 while True:
     show_menu()
     choice = input("Choose: ")
@@ -73,6 +82,8 @@ while True:
         view_expenses()
     elif choice == "3":
         remove_expense()
+    elif choice == "4":
+        view_total_expenses()
     elif choice == "6":
         print("Goodbye!")
         break
