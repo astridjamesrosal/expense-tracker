@@ -1,7 +1,21 @@
-expenses = []
+import json
+
+def load_expenses():
+    try:
+        with open("expenses.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
+    
+def save_expenses(): 
+    with open("expenses.json", "w") as f:
+        json.dump(expenses, f)
+
+expenses = load_expenses()
 next_id = 1
 
 def show_menu():
+
     print('Hello, Please select a number')
     print('1. Add Expense')
     print('2. View Expenses')
@@ -112,6 +126,7 @@ while True:
     elif choice == "5":
         view_expenses_by_category()
     elif choice == "6":
+        save_expenses()
         print("Goodbye!")
         break
     else:
