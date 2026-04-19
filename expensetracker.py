@@ -72,6 +72,31 @@ def view_total_expenses():
         total += expense["amount"]
     print(f"Total Expenses: ${(total):.2f}")
 
+def view_expenses_by_category():
+    if not expenses:
+        print("No categories to show.")
+        return
+    
+    categories = set()
+    for expense in expenses:
+        categories.add(expense['category'])
+    print("Available categories:", ", ".join(categories))
+
+    choice = input("Enter category: ")
+    if choice not in categories:
+        print("Invalid category, please enter a valid category.")
+    else:
+        print(f"Expenses in category '{choice}':")
+        for expense in expenses:
+            if expense["category"] == choice:
+                print(f"ID: {expense['id']}, Amount: ${expense['amount']:.2f}, Description: {expense['description']}")
+        
+        total = 0
+        for expense in expenses:
+            if expense["category"] == choice:
+                total += expense["amount"]
+        print(f"Total for {choice}: ${total:.2f}")
+
 while True:
     show_menu()
     choice = input("Choose: ")
@@ -84,6 +109,8 @@ while True:
         remove_expense()
     elif choice == "4":
         view_total_expenses()
+    elif choice == "5":
+        view_expenses_by_category()
     elif choice == "6":
         print("Goodbye!")
         break
