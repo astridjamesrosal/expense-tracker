@@ -12,7 +12,14 @@ def save_expenses():                                #Saves the current expenses 
         json.dump(expenses, f)                      #Takes the expenses list from the program and writes it to the file in JSON.
 
 expenses = load_expenses()                          #Instead of [], we will load previously saved expenses from the JSON file.
-next_id = 1                                         #Initialize next_id to 1, which will be used to assign unique IDs to expenses. 
+
+if expenses:                                        #If the expenses list is not empty
+    ids = []                                        #Creates an empty list to store the IDs of all existing expenses.
+    for expense in expenses:                        #Loops through every expense in the loaded expenses list.
+        ids.append(expense["id"])                   #Extracts the ID from each expense and adds it to the ids list.
+    next_id = max(ids) + 1                          #Finds the highest existing ID and adds 1 to ensure the next expense gets a unique ID.
+else:                                               #If the expenses list is empty
+    next_id = 1                                     #Initialize next_id to 1, which will be used to assign unique IDs to expenses. 
 
 def show_menu():                                    #Creates a function that shows the menu options the user can choose.
 
