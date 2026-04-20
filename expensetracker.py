@@ -111,23 +111,23 @@ def view_expenses_by_category():                    #It defines a function where
                 total += expense["amount"]          #Add the amount of each expense in the chosen category to the total variable, which accumulates the total expenses for that category.
         print(f"Total for {choice}: ${total:.2f}")  #:.2f adds 2 decimal places for the whole number.
 
-while True:                                         
-    show_menu()
-    choice = input("Choose: ")
+while True:                                         #Main loop that keeps the program running until the user chooses to exit. It displays the menu and processes user input.
+    show_menu()                                     #Shows the menu options to the user by calling the show_menu function.
+    choice = input("Choose: ")                      #Captures the user's menu selection as a string.
 
-    if choice == "1":
+    if choice == "1":                               #If the user enters 1, call the add_expense function.
         add_expense()
-    elif choice == "2":
+    elif choice == "2":                             #If the user enters 2, call the view_expenses function.
         view_expenses()
-    elif choice == "3":
+    elif choice == "3":                             #If the user enters 3, call the remove_expense function.
         remove_expense()
-    elif choice == "4":
+    elif choice == "4":                             #If the user enters 4, call the view_total_expenses function.
         view_total_expenses()
-    elif choice == "5":
+    elif choice == "5":                             #If the user enters 5, call the view_expenses_by_category function.
         view_expenses_by_category()
-    elif choice == "6":
-        save_expenses()
+    elif choice == "6":                             #If the user enters 6, call the save_expenses function to save the current expenses to the JSON file and then exit the program. 
+        save_expenses() 
         print("Goodbye!")
-        break
-    else:
+        break                                       #Exits the loop. Ending the program.
+    else:                                           #If the input doesn't match any valid option, notify the user.
         print("Invalid choice, please enter a number from 1 to 6.")
