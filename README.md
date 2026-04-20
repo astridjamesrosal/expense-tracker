@@ -15,3 +15,5 @@ A command-line expense tracker built in Python.
 # How to Run
 - Make sure Python is installed
 - Run: python expensetracker.py
+
+I added comments beside each line of code to not forget their respective functions.
