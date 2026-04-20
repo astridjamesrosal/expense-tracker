@@ -10,6 +10,7 @@ A command-line expense tracker built in Python.
 - Viewing the expenses by their designated Category
 - Saving the expenses in a JSON file
 - Unique ID assigned to each expense
+- If there are no expenses, ID starts at 1. But if there are, the next ID would be plus 1 of the highest existing ID.
 - Input validation for amounts
 
 # How to Run
