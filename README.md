@@ -26,4 +26,3 @@ A command-line expense tracker built in Python.
 - If there are invalid user input, we handle it and avoid for the program from crashing.
 - I also learned Git and GitHub — adding, committing, and pushing my code for the first time.
 - I also learned global and local variables and when to use them.
-- I added comments beside each line of code to not forget their respective functions.
