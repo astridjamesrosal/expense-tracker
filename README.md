@@ -26,3 +26,11 @@ A command-line expense tracker built in Python.
 - If there are invalid user input, we handle it and avoid for the program from crashing.
 - I also learned Git and GitHub — adding, committing, and pushing my code for the first time.
 - I also learned global and local variables and when to use them.
+
+## Preview
+![Main Menu](expense_tracker_1.jpg)
+![Adding an Expense](expense_tracker_2.jpg)
+![Viewing Expenses](expense_tracker_3.jpg)
+![Removing an Expense](expense_tracker_4.jpg)
+![Total Expenses](expense_tracker_5.jpg)
+![Expenses by Category](expense_tracker_6.jpg)
